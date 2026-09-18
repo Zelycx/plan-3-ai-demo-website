@@ -1,0 +1,10 @@
+{
+  "name": "business-demo-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vanilla static small-business demo with a protected Netlify AI function.",
+  "scripts": {
+    "test": "node --test tests/chat.test.js",
+    "serve": "npx netlify dev"
+  }
+}

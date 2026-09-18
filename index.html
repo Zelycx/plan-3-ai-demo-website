@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A polished fictional small-business website demo with booking, directions, and an AI business assistant.">
+    <title>Business Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="overrides.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="top">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Home"><span class="brand-mark">✦</span><span data-business-name>Business Demo</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links"><span class="sr-only">Toggle navigation</span><span></span><span></span><span></span></button>
+        <div class="nav-links" id="nav-links">
+          <a href="#about">About</a><a href="#services">Services</a><a href="#booking">Book</a><a href="#location">Location</a><a href="#assistant">Assistant</a><a class="nav-cta" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Adaptable local-business website demo</p>
+            <h1>Clear help. Easy booking. <em>Right where it matters.</em></h1>
+            <p class="lead" data-business-description>Loading business information…</p>
+            <div class="hero-actions"><a class="button button-primary" href="#booking">Book a schedule <span aria-hidden="true">→</span></a><a class="button button-quiet" href="#location">Find us</a></div>
+            <p class="demo-note">Demo only — not affiliated with, authorized by, or an official PUP service.</p>
+          </div>
+          <aside class="hero-card reveal" aria-label="Business information">
+            <p class="eyebrow">At a glance</p><h2>Designed for the next real client.</h2>
+            <dl><div><dt>Location</dt><dd data-business-city>San Pedro, Laguna</dd></div><div><dt>Booking</dt><dd>Client-owned calendar</dd></div><div><dt>Privacy</dt><dd>Location stays in your browser</dd></div></dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="about"><div class="container two-column reveal"><div><p class="eyebrow">About this demo</p><h2>Built to feel useful from the first visit.</h2></div><div><p data-business-description></p><p>Every offer below is intentionally fictional. A future business owner can replace the wording, schedule, prices, policies, contact details, and booking link in one configuration file.</p><div class="hours" aria-label="Business hours"><h3>Demo hours</h3><dl id="hours-list"></dl></div><a class="text-link" href="#contact">Ask a question <span aria-hidden="true">→</span></a></div></div></section>
+
+      <section class="section section-tint" id="services"><div class="container"><div class="section-heading reveal"><p class="eyebrow">Demo services</p><h2>Simple offers, plainly explained.</h2><p>Fictional examples only — ready to be swapped for a real client’s services.</p></div><div class="service-grid" id="services-list" aria-live="polite"></div></div></section>
+
+      <section class="section" id="booking"><div class="container booking-layout"><div class="reveal"><p class="eyebrow">Reservations</p><h2>Book with the business’s real availability.</h2><p id="booking-description">Loading booking options…</p><div class="booking-panel" id="booking-live" hidden><p class="status-label">Live booking calendar</p><h3>Current available times live in the business-owned calendar.</h3><p>The calendar manages availability, conflicts, confirmations, and cancellations.</p><a class="button button-primary external-booking" target="_blank" rel="noopener noreferrer" href="#">Open booking calendar <span aria-hidden="true">↗</span></a></div></div><form class="reservation-form reveal" id="reservation-form" name="reservation-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/?reservation=success#booking" hidden><input type="hidden" name="form-name" value="reservation-request"><p class="honeypot"><label>Do not fill this out <input name="bot-field" tabindex="-1" autocomplete="off"></label></p><p class="status-label">Reservation request</p><h3>Request a preferred time</h3><p class="form-notice">Submitting this form is a reservation request. Your reservation is only confirmed after the business confirms availability.</p><div class="form-grid"><label>Full name<input required name="full-name" autocomplete="name"></label><label>Email<input required type="email" name="email" autocomplete="email"></label><label>Phone number<input required type="tel" name="phone" autocomplete="tel"></label><label>Number of guests<input required type="number" name="guests" min="1" max="50" value="1"></label><label>Preferred date<input required type="date" name="preferred-date"></label><label>Preferred time<input required type="time" name="preferred-time"></label></div><label>Notes<textarea name="notes" rows="3" maxlength="800" placeholder="Optional details"></textarea></label><button class="button button-primary" type="submit">Send reservation request <span aria-hidden="true">→</span></button><p class="form-status" aria-live="polite"></p></form></div></section>
+
+      <section class="section section-tint" id="location"><div class="container location-grid"><div class="reveal"><p class="eyebrow">Find us</p><h2>A route that starts with your choice.</h2><address data-business-address>Loading address…</address><p class="small-copy"><strong>Approximate distance</strong> is straight-line distance, not driving distance.</p><div class="location-actions"><button class="button button-primary" id="location-button" type="button">Use my location</button><a class="button button-quiet" id="maps-link" target="_blank" rel="noopener noreferrer" href="#">Google Maps <span aria-hidden="true">↗</span></a><a class="button button-quiet" id="waze-link" target="_blank" rel="noopener noreferrer" href="#">Waze <span aria-hidden="true">↗</span></a></div><p class="location-status" id="location-status" role="status" aria-live="polite">Location permission is required to calculate your approximate distance.</p><p class="privacy-note">Your location is requested only to calculate your approximate distance from us. We do not store your coordinates.</p></div><div class="map-card reveal"><div class="map-art" aria-hidden="true"><span class="map-ring ring-one"></span><span class="map-ring ring-two"></span><span class="map-pin">●</span></div><div><p class="status-label">Demo location</p><h3 data-business-name>Business Demo</h3><p data-business-address></p><a class="text-link" id="map-text-link" target="_blank" rel="noopener noreferrer" href="#">View on Google Maps <span aria-hidden="true">→</span></a></div></div></div></section>
+
+      <section class="section" id="assistant"><div class="container assistant-layout"><div class="reveal"><p class="eyebrow">Ask our assistant</p><h2>Business answers, kept on-topic.</h2><p>Ask about these demo services, hours, reservations, location, contact details, or policies. The assistant does not know or guess live availability.</p><div class="prompt-list"><button type="button">What services do you offer?</button><button type="button">Where are you located?</button><button type="button">How do I book?</button><button type="button">What are your business hours?</button></div></div><div class="chat-card reveal"><div class="chat-header"><div><p class="status-label">Business assistant</p><h3>How can we help?</h3></div><button class="text-button" id="clear-chat" type="button">Clear chat</button></div><div class="messages" id="messages" role="log" aria-live="polite" aria-label="Chat conversation"><div class="message assistant-message">Hi — I can help with this demo business’s services, location, reservations, hours, and contact details.</div></div><form class="chat-form" id="chat-form"><label class="sr-only" for="chat-input">Your question</label><textarea id="chat-input" name="message" rows="2" maxlength="600" placeholder="Ask a business question…" required></textarea><button class="button button-primary" type="submit">Send</button></form><p class="chat-status" id="chat-status" role="status" aria-live="polite"></p></div></div></section>
+
+      <section class="section section-dark" id="contact"><div class="container contact-layout reveal"><div><p class="eyebrow">Contact</p><h2>Ready for a real business identity.</h2><p>For this demo, contact details point to the site owner’s designated email.</p></div><div class="contact-links"><a data-business-email href="mailto:ezekielmores084@gmail.com">ezekielmores084@gmail.com</a><a data-business-phone href="tel:+639000000000">+63 900 000 0000</a><p data-business-address></p></div></div></section>
+    </main>
+    <footer><div class="container footer-grid"><div><a class="brand" href="#top"><span class="brand-mark">✦</span><span data-business-name>Business Demo</span></a><p>Fictional demonstration content. Not affiliated with or an official PUP service.</p></div><div><h2>Privacy</h2><p>Contact and reservation details are used for business communication. Location is optional, stays in your browser, and is never sent to the AI assistant or stored. Booking is handled by the configured booking service; fallback requests use Netlify Forms. AI messages go to the configured AI provider through the backend.</p></div></div></footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

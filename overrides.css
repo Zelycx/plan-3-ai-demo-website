@@ -1,0 +1,6 @@
+.hours { margin: 1.5rem 0; }
+.hours h3 { font-size: 1.1rem; }
+.hours dl { margin: 0; max-width: 400px; }
+.hours dl div { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
+.hours dt { font-weight: 700; }
+.hours dd { margin: 0; color: var(--muted); text-align: right; }
